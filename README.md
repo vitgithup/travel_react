@@ -1,7 +1,7 @@
 
 # frontend setup
 
-git clone https://gitlab.com/vitgithup/travel_react.git
+git clone https://github.com/vitgithup/travel_react.git
 ```
 cd react_travel
 npm i 
