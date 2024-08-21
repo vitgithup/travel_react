@@ -24,10 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Suspense fallback=
-          {<div>please wait...</div>}>
-          <Books />
-        </Suspense>,
+        element: <Books />,
       },
 
  
@@ -55,10 +52,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/booking",
-        element: <Suspense fallback=
-          {<div>please wait...</div>}>
-          <FlightSearch />
-        </Suspense>,
+        element: <FlightSearch />,
       }
     ],
   },

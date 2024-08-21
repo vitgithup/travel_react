@@ -69,9 +69,9 @@ const Books = () => {
   useEffect(() => {
     const filtered = bookings.filter(booking =>
       (booking.passenger_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        booking.passenger_name.toLowerCase().includes(searchTerm.toLowerCase())
+        booking.passenger_email.toLowerCase().includes(searchTerm.toLowerCase())
       ) &&
-      (!filterDate || new Date(booking.departure_time).toDateString() === new Date(filterDate).toDateString())
+      (!filterDate || new Date(booking.flight.departure_time).toDateString() === new Date(filterDate).toDateString())
     );
     setFilteredBookings(filtered);
   }, [searchTerm, filterDate, bookings]);
@@ -94,7 +94,7 @@ const Books = () => {
       <div className="mb-6 flex flex-col md:flex-row md:items-center md:space-x-4">
         <input
           type="text"
-          placeholder="Search by name or reference"
+          placeholder="Search by name or email"
           value={searchTerm}
           onChange={handleSearchChange}
           className="w-full md:w-1/2 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2 md:mb-0"
